@@ -38,7 +38,7 @@ import com.zhenshuaiwei.utils.StringUtils;
 public class fileAddTest {
 
 	
-//	@Autowired
+	@Autowired
 	private GoodsService service;
 	/**
 	 * 

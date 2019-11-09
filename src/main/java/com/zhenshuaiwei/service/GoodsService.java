@@ -11,8 +11,11 @@
 package com.zhenshuaiwei.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import com.github.pagehelper.PageInfo;
 import com.zhenshuaiwei.entity.Goods;
+import com.zhenshuaiwei.vo.Vo;
 
 /** 
  * @ClassName: GoodsMapper 
@@ -30,5 +33,15 @@ public interface GoodsService {
 	 * @date: 2019年11月8日下午7:47:37
 	 */
 	void addFileGoods(ArrayList<Goods> goodsList);
+
+	/** 
+	 * @Title: getGoodsList 
+	 * @Description: TODO
+	 * @param vo
+	 * @param page
+	 * @return: void
+	 * @date: 2019年11月9日上午8:16:48
+	 */
+	PageInfo<Goods> getGoodsList(Vo vo, String page);
 
 }

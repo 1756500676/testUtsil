@@ -11,8 +11,10 @@
 package com.zhenshuaiwei.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.zhenshuaiwei.entity.Goods;
+import com.zhenshuaiwei.vo.Vo;
 
 /** 
  * @ClassName: GoodsMapper 
@@ -30,6 +32,15 @@ public interface GoodsMapper {
 	 * @date: 2019年11月8日下午7:48:35
 	 */
 	void addGoods(Goods goods);
+
+	/** 
+	 * @Title: getGoodsList 
+	 * @Description: TODO
+	 * @param vo
+	 * @return: void
+	 * @date: 2019年11月9日上午8:20:02
+	 */
+	List<Goods> getGoodsList(Vo vo);
 
 
 }

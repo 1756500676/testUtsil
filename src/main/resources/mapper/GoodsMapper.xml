@@ -7,5 +7,13 @@
   	<insert id="addGoods">
   		insert into tb_goods set id=#{id},name=#{name},price=#{price},sells=#{sells} 
   	</insert>
+  	
+  	<select id="getGoodsList" resultType="com.zhenshuaiwei.entity.Goods">
+		select 	id,
+				name,
+				price,
+				sells
+		from tb_goods
+  	</select>
   
   </mapper>

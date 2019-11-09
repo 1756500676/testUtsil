@@ -11,13 +11,17 @@
 package com.zhenshuaiwei.service.impl;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.zhenshuaiwei.dao.GoodsMapper;
 import com.zhenshuaiwei.entity.Goods;
 import com.zhenshuaiwei.service.GoodsService;
+import com.zhenshuaiwei.vo.Vo;
 
 /** 
  * @ClassName: GoodsServiceImpl 
@@ -42,6 +46,21 @@ public class GoodsServiceImpl implements GoodsService {
 		goodsList.forEach(goods -> {
 			mapper.addGoods(goods);
 		});
+	}
+
+	/* (non Javadoc) 
+	 * @Title: getGoodsList
+	 * @Description: TODO
+	 * @param vo
+	 * @param page
+	 * @return 
+	 * @see com.zhenshuaiwei.service.GoodsService#getGoodsList(com.zhenshuaiwei.vo.Vo, java.lang.String) 
+	 */
+	@Override
+	public  PageInfo<Goods> getGoodsList(Vo vo, String page) {
+		PageHelper.startPage(Integer.parseInt(page), 5);
+		List<Goods> list = mapper.getGoodsList(vo);
+		return new PageInfo(list);
 	}
 	
 	
